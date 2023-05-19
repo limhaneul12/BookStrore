@@ -7,6 +7,7 @@ from .models import *
 class AuthorAdmin(admin.ModelAdmin):
     list_display = ["author", "nationality", "created_at"]
     list_display_links = ["author"]
+    search_fields = ["author"]
     
     list_filter = ["nationality"]
 
@@ -15,7 +16,8 @@ class AuthorAdmin(admin.ModelAdmin):
 class BooksAdmin(admin.ModelAdmin):
     list_display = ["is_public", "book_name", "author", "created_at"]
     list_display_links = ["book_name"]
-    
+    search_fields = ["book_name"]
+
     list_filter = ["is_public"]
 
 
@@ -23,5 +25,6 @@ class BooksAdmin(admin.ModelAdmin):
 class BookContenPublicationAdmin(admin.ModelAdmin):
     list_display = ["book_name", "book_lang"]
     list_display_links = ["book_name"]
+    search_fields = ["book_name"]
 
     list_filter = ["book_lang"]
