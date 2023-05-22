@@ -19,6 +19,9 @@ class AuthorInformation(TimeStamp):
     class Meta:
         db_table: str = "author_inform"
     
+    def __str__(self) -> str:
+        return f"[{self.author}]"
+        
     
 class BooksAndPublicationYear(TimeStamp):
     author           = models.ForeignKey(AuthorInformation, verbose_name=_("author_id"), on_delete=models.CASCADE)
@@ -28,6 +31,9 @@ class BooksAndPublicationYear(TimeStamp):
 
     class Meta:
         db_table: str = "books_public_inform"
+    
+    def __str__(self) -> str:
+        return f"[{self.book_name}]"
         
 
 class BookContentDetailInform(TimeStamp):
@@ -37,4 +43,7 @@ class BookContentDetailInform(TimeStamp):
     
     class Meta:
         db_table: str = "content_detail_inform"
+    
+    def __str__(self) -> str:
+        return f"[{self.book_name}]"
         
