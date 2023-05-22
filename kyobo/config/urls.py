@@ -20,7 +20,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("authorbook", include("apps.store.urls"))
+    path("authorbook/", include("apps.store.urls"))
 ]
 
 if settings.DEBUG:

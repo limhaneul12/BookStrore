@@ -6,8 +6,19 @@ from .serializer import *
 
 
 router = DefaultRouter()
-router.register("", apis.AllBookInforViewset)
+router.register("private", 
+                apis.AllAuthorTotalInformationViewset,
+                basename="private-book")
+
 
 urlpatterns = [
-    path("", include(router.urls))
+    path(
+        "author", 
+        include(router.urls)
+    ),
+    path(
+        "public-book",
+        apis.PublicBookReslses.as_view(),
+        name="public_book"
+    )
 ]
