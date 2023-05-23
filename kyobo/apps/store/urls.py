@@ -13,7 +13,7 @@ router.register("private",
 
 urlpatterns = [
     path(
-        "author", 
+        "author/", 
         include(router.urls)
     ),
     path(
