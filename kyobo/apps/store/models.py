@@ -38,9 +38,11 @@ class BooksAndPublicationYear(TimeStamp):
         
 
 class BookContentDetailInform(TimeStamp):
-    book_name = models.ForeignKey(BooksAndPublicationYear, verbose_name=_("book_name_id"), on_delete=models.CASCADE, db_index=True)
+    book_name = models.ForeignKey(BooksAndPublicationYear, verbose_name=_("book_name_id"), 
+                                on_delete=models.CASCADE, db_index=True)
     book_lang = models.CharField(max_length=15, verbose_name=_("book_lange"))
-    content   = models.CharField(max_length=40, verbose_name=_("book_content"), validators=[MaxLengthValidator(limit_value=40)])
+    content   = models.CharField(max_length=40, verbose_name=_("book_content"), 
+                                validators=[MaxLengthValidator(limit_value=40)])
     
     class Meta:
         db_table: str = "content_detail_inform"
