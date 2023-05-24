@@ -22,12 +22,9 @@ JSON architectire
 """
 
 
-from rest_framework import serializers 
-from .models import (
-    BookContentDetailInform, 
-    BooksAndPublicationYear, 
-    AuthorInformation
-)
+from rest_framework import serializers
+from .models import BookContentDetailInform, BooksAndPublicationYear, AuthorInformation
+
 
 class ContentBookInformationSerializer(serializers.ModelSerializer):
     class Meta:
@@ -40,7 +37,7 @@ class ContentBookInformationSerializer(serializers.ModelSerializer):
 
 class BookInformationSerializer(serializers.ModelSerializer):
     content = serializers.SerializerMethodField()
-    
+
     class Meta:
         model = BooksAndPublicationYear
         fields = [
@@ -57,7 +54,7 @@ class BookInformationSerializer(serializers.ModelSerializer):
 
 class AuthorBookInformationSerializer(serializers.ModelSerializer):
     book_info = serializers.SerializerMethodField()
-    
+
     class Meta:
         model = AuthorInformation
         fields = [

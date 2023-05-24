@@ -10,9 +10,10 @@ from .serializer import *
 # Create your views here.
 class AuthorAbstractFilter:
     """
-    filter abstract 
-    추상화 작성 pagenation 추가 고민 
+    filter abstract
+    추상화 작성 pagenation 추가 고민
     """
+
     filters_backends = [DjangoFilterBackend]
     filters_fields = ["author"]
 
@@ -21,19 +22,21 @@ class AllAuthorTotalInformationViewset(ModelViewSet, AuthorAbstractFilter):
     """
     Args:
         ModelViewSet (_type_): CRUD
-        AuthorAbstractFilter (_type_): 필터 추상화 
+        AuthorAbstractFilter (_type_): 필터 추상화
     """
+
     queryset = AuthorInformation.objects.all()
     serializer_class = AuthorBookInformationSerializer
-    permission_classes = (IsAdminUser, )
+    permission_classes = (IsAdminUser,)
 
 
 class PublicBookReslses(ListAPIView, AuthorAbstractFilter):
     """
     Args:
-        ListAPIView (_type_): 출시 완료된 도서만 
-        AuthorAbstractFilter (_type_): 필터 추상화 
+        ListAPIView (_type_): 출시 완료된 도서만
+        AuthorAbstractFilter (_type_): 필터 추상화
     """
-    queryset = BooksAndPublicationYear.objects.filter(is_public=True) 
+
+    queryset = BooksAndPublicationYear.objects.filter(is_public=True)
     serializer_class = BookInformationSerializer
-    permission_classes = (AllowAny, )
+    permission_classes = (AllowAny,)
