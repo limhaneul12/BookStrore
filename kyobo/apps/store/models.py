@@ -26,6 +26,7 @@ class AuthorInformation(TimeStamp):
 class BooksAndPublicationYear(TimeStamp):
     author           = models.ForeignKey(AuthorInformation, verbose_name=_("author_id"), on_delete=models.CASCADE)
     book_name        = models.CharField(max_length=40, verbose_name=_("book_name"), db_index=True)
+    book_picture     = models.ImageField(verbose_name=_("book_picture"))
     is_public        = models.BooleanField(default=False, verbose_name=_("book_publishing"))
     publication_year = models.DateField()
 
