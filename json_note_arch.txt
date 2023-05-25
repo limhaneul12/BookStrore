@@ -1,0 +1,52 @@
+"""
+1. book_list
+JSON architectire
+{
+    "author: "sky",
+    "nationality": "KR",
+    "book_info": {
+        [
+            "book_name": "test",
+            "publication_year: "2023-05-23", 
+            "is_public": True and False,
+            "content": {
+                [
+                    "book_lang": "KR",
+                    "content": "~~~~"
+                ]
+            }
+        ]
+    },
+    "created_at: "~~~",
+    "updated_at: "~~~"
+}
+"""
+
+"""
+{
+    "author": "sky,
+    "nationality": "KR"
+    "publisher": "소속사",
+    "created_at": "등록시기"
+}
+
+
+
+"""
+
+OrderedDict(
+    [
+        ('id', 1), 
+        ('publisher', '하늘출판사'), 
+        (
+            'author', [
+            OrderedDict(
+                [
+                    ('author', '임하늘'), 
+                    ('nationality', 'KR')
+                ]
+            )
+        ]
+        )
+    ]
+)

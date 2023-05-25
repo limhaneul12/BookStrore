@@ -3,7 +3,6 @@ from .models import *
 
 # Register your models here.
 
-
 @admin.register(AuthorInformation)
 class AuthorAdmin(admin.ModelAdmin):
     list_display = ["author", "nationality", "created_at"]

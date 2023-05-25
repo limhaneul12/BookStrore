@@ -40,3 +40,5 @@ class PublicBookReslses(ListAPIView, AuthorAbstractFilter):
     queryset = BooksAndPublicationYear.objects.filter(is_public=True)
     serializer_class = BookInformationSerializer
     permission_classes = (AllowAny,)
+
+

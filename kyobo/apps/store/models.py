@@ -12,20 +12,9 @@ class TimeStamp(models.Model):
         abstract: bool = True
 
 
-class PublisherAuthorOrganisation(models.Model):
-    publisher = models.CharField(
-        max_length=40, verbose_name=_("publisher"), db_index=True
-    )
-
-
 class AuthorInformation(TimeStamp):
     author = models.CharField(
         max_length=15, null=False, verbose_name=_("author"), db_index=True
-    )
-    publisher_id = models.ForeignKey(
-        PublisherAuthorOrganisation,
-        verbose_name=_("publisher_id"),
-        on_delete=models.CASCADE,
     )
     nationality = CountryField()
 
