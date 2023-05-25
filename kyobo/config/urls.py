@@ -20,8 +20,15 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("authorbook/", include("apps.store.urls")),
+    
+    # book authentication in publisher of organization 
     path("auth/", include("apps.authentication.urls")),
+
+    # book store
+    path("book/", include("apps.store.urls")),
+    
+    # user application
+    path("", include("apps.accounts.urls"))
 ]
 
 if settings.DEBUG:

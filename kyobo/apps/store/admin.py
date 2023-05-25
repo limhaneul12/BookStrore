@@ -3,14 +3,6 @@ from .models import *
 
 # Register your models here.
 
-@admin.register(AuthorInformation)
-class AuthorAdmin(admin.ModelAdmin):
-    list_display = ["author", "nationality", "created_at"]
-    list_display_links = ["author"]
-    search_fields = ["author"]
-
-    list_filter = ["nationality"]
-
 
 @admin.register(BooksAndPublicationYear)
 class BooksAdmin(admin.ModelAdmin):

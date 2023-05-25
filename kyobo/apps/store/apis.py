@@ -2,6 +2,7 @@ from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.generics import ListAPIView
 from rest_framework.permissions import IsAdminUser, AllowAny
+from apps.authentication.models import AuthorOrganizerInformation
 
 from .models import *
 from .serializer import *
@@ -25,7 +26,7 @@ class AllAuthorTotalInformationViewset(ModelViewSet, AuthorAbstractFilter):
         AuthorAbstractFilter (_type_): 필터 추상화
     """
 
-    queryset = AuthorInformation.objects.all()
+    queryset = AuthorOrganizerInformation.objects.all()
     serializer_class = AuthorBookInformationSerializer
     permission_classes = (IsAdminUser,)
 

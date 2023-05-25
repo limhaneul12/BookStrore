@@ -1,8 +1,8 @@
 from django.db import models
 from django.core.validators import MaxLengthValidator
 from django.utils.translation import gettext_lazy as _
-from django_countries.fields import CountryField
 
+from apps.authentication.models import AuthorOrganizerInformation
 
 class TimeStamp(models.Model):
     created_at = models.DateTimeField(auto_now=True)
@@ -12,22 +12,9 @@ class TimeStamp(models.Model):
         abstract: bool = True
 
 
-class AuthorInformation(TimeStamp):
-    author = models.CharField(
-        max_length=15, null=False, verbose_name=_("author"), db_index=True
-    )
-    nationality = CountryField()
-
-    class Meta:
-        db_table: str = "author_inform"
-
-    def __str__(self) -> str:
-        return f"[{self.author}]"
-
-
 class BooksAndPublicationYear(TimeStamp):
     author = models.ForeignKey(
-        AuthorInformation, verbose_name=_("author_id"), on_delete=models.CASCADE
+        AuthorOrganizerInformation, verbose_name=_("author_id"), on_delete=models.CASCADE
     )
     book_name = models.CharField(
         max_length=40, verbose_name=_("book_name"), db_index=True

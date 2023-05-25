@@ -1,4 +1,5 @@
 from rest_framework import serializers
+from apps.authentication.models import AuthorOrganizerInformation
 from typing import *
 from .models import *
 
@@ -33,7 +34,7 @@ class AuthorBookInformationSerializer(serializers.ModelSerializer):
     book_info = serializers.SerializerMethodField()
 
     class Meta:
-        model = AuthorInformation
+        model = AuthorOrganizerInformation
         fields = [
             "id",
             "author",
