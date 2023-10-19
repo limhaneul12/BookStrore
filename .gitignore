@@ -161,3 +161,7 @@ cython_debug/
 
 
 migrations/
+my-init
+trying.sh
+backend/config/static
+.vscode

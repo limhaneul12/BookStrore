@@ -1,5 +1,0 @@
-django 
-djangorestframework
-request
-psycopg2
-django-countries

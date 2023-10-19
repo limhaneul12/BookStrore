@@ -33,20 +33,3 @@ JSON architectire
 
 
 """
-
-OrderedDict(
-    [
-        ('id', 1), 
-        ('publisher', '하늘출판사'), 
-        (
-            'author', [
-            OrderedDict(
-                [
-                    ('author', '임하늘'), 
-                    ('nationality', 'KR')
-                ]
-            )
-        ]
-        )
-    ]
-)
