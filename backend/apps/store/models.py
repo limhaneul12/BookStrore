@@ -39,7 +39,7 @@ class BooksAndPublicationYear(TimeStamp):
 
 
 class BookContentDetailInform(TimeStamp):
-    book_name = models.OneToOneField(j
+    book_name = models.OneToOneField(
         to="BooksAndPublicationYear",
         verbose_name=_("book_name_id"),
         on_delete=models.CASCADE,
