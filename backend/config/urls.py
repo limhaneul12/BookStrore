@@ -22,7 +22,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("auth/", include("apps.authentication.urls")),
     path("book/", include("apps.store.urls")),
-    path("", include("apps.accounts.urls")),
+    path("acc/", include("apps.accounts.urls")),
 ]
 
 if settings.DEBUG:

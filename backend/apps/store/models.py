@@ -14,12 +14,12 @@ class TimeStamp(models.Model):
 
 class BooksAndPublicationYear(TimeStamp):
     author = models.ForeignKey(
-        to="authentication.AuthorInformation", 
-        verbose_name=_("author_id"), 
-        on_delete=models.CASCADE
+        to="authentication.AuthorInformation",
+        verbose_name=_("author_id"),
+        on_delete=models.CASCADE,
     )
     book_name = models.CharField(
-        max_length=40, 
+        max_length=40,
         verbose_name=_("book_name"),
         unique=True,
     )
@@ -39,7 +39,7 @@ class BooksAndPublicationYear(TimeStamp):
 
 
 class BookContentDetailInform(TimeStamp):
-    book_name = models.OneToOneField(
+    book_name = models.OneToOneField(j
         to="BooksAndPublicationYear",
         verbose_name=_("book_name_id"),
         on_delete=models.CASCADE,
@@ -56,7 +56,7 @@ class BookContentDetailInform(TimeStamp):
         db_table_comment: str = "책언어 테이블"
         indexes: list[models.Index] = [
             models.Index(fields=["book_name"], name="bookname_fore_index"),
-            models.Index(fields=["nationality"], name="nationlity_index")
+            models.Index(fields=["nationality"], name="nationlity_index"),
         ]
 
     def __str__(self) -> str:
