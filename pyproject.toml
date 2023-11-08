@@ -17,6 +17,7 @@ mypy = "^1.4.1"
 django-storages = "^1.13.2"
 django-filter = "^23.2"
 pillow = "^10.0.0"
+mysqlclient = "^2.2.0"
 
 
 [build-system]
